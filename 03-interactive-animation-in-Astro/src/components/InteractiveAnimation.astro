@@ -1,0 +1,51 @@
+---
+// Eksponer props
+interface Props {
+  name: string;
+  mode: string;
+}
+//Få props
+const { name, mode } = Astro.props;
+//Sammensæt src link fra props
+const link = `./assets/${name}.json`;
+---
+
+<!-- Tilføj Lottie player -->
+<lottie-player src={link} data-mode={mode}></lottie-player>
+<slot />
+<br />
+
+<!-- Style player -->
+<style>
+  lottie-player {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+  }
+</style>
+
+<!-- Tilføj interaction -->
+<script>
+  const interactiveAnimations = document.querySelectorAll("lottie-player");
+
+  interactiveAnimations.forEach((element) => {
+    const mode = element.dataset.mode;
+    console.log("mode", mode);
+
+    LottieInteractivity.create({
+      player: element,
+      mode: "cursor",
+      actions: [
+        {
+          type: mode,
+          forceFlag: false,
+        },
+      ],
+    });
+  });
+</script>
+
+<!-- 
+    Mere information om LottieInteractivity:
+    https://lottiefiles.com/interactivity  
+    -->

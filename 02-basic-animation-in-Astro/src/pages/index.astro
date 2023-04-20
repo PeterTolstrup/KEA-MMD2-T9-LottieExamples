@@ -1,5 +1,5 @@
 ---
-//04 Import component
+// Import component
 import Animation from "../components/Animation.astro";
 ---
 
@@ -10,10 +10,16 @@ import Animation from "../components/Animation.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Basic Animation in Astro</title>
+    <!-- Importer kode fra CDN-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
-    <!-- 05 Add component -->
-	<Animation size="medium" name="activity"/>
-	<Animation size="medium" name="notification"/>
+    <!-- Add component  -->
+    <Animation size="small" name="activity" />
+    <Animation size="medium" name="notification" />
+    <Animation size="big" name="triangle" />
+    <!-- 
+    Animationer fra: https://useanimations.com/   
+    -->
   </body>
 </html>
