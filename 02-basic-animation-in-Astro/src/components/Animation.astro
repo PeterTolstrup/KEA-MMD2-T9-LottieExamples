@@ -1,0 +1,34 @@
+---
+// 01a: eksponer props
+interface Props {
+    size:string,
+    name:string,
+}
+
+// 01b: få props
+const {size, name} = Astro.props;
+
+// 01c: Sammansæt link fra props
+const link = `/assets/${name}.json`;
+---
+<!-- 02: Importer kode fra CDN-->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- 03: Tilføj Lottie Player med props-->
+<lottie-player class={size} src={link} loop autoplay></lottie-player>
+
+<!-- 04: Lav regler der kan skiftes med props -->
+<style>
+  .small {
+    width: 150px;
+    height: 150px;
+  }
+  .medium {
+    width: 300px;
+    height: 300px;
+  }
+  .big {
+    width: 450px;
+    height: 450px;
+  }
+</style>
