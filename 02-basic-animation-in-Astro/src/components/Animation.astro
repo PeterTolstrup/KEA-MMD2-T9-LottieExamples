@@ -1,6 +1,6 @@
 ---
 // Eksponer props
-interface Props {
+export interface Props {
   size: string;
   name: string;
 }
@@ -11,6 +11,9 @@ const { size, name } = Astro.props;
 // Sammansæt link fra props
 const link = `/assets/${name}.json`;
 ---
+
+<!-- Importer Lottie kode fra CDN (bemærk "is:inline" i Astro)-->
+<script is:inline src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <!-- Tilføj Lottie Player med props-->
 <lottie-player class={size} src={link} loop autoplay></lottie-player>
@@ -30,8 +33,3 @@ const link = `/assets/${name}.json`;
     height: 450px;
   }
 </style>
-
-<!-- 
-    Mere information om <lottie-player> element:
-    https://lottiefiles.com/web-player   
-    -->

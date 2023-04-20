@@ -1,0 +1,41 @@
+---
+import ButtonWithAnimation from "../components/ButtonWithAnimation.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Interactive Element With an Animation</title>
+
+    <!-- Importer LottieFiles biblioteket -->
+    <script is:inline src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Importer også biblioteket til interaktive LottieFiles -->
+    <script is:inline src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <!-- Simpel CSS -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <ButtonWithAnimation animation="forward" text="Move Ahead" />
+    <br />
+    <ButtonWithAnimation animation="edit" text="Click to Edit" />
+  </body>
+  <!-- 
+    Animationer fra: https://useanimations.com/
+
+    Mere information om LottieInteractivity:
+    https://lottiefiles.com/interactivity    
+    -->
+</html>

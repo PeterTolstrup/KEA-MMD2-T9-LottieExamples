@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Interactive Animation in HTML</title>
+    <!-- Importer LottieFiles biblioteket -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Importer også LottieInteractivity til interaktive LottieFiles -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  </head>
+  <body>
+    <!-- Tilføj lottie player element -->
+    <lottie-player id="lottie" src="./assets/chevron-left.json" style="width: 300px; height: 300px"></lottie-player>
+
+    <!-- Script til interaktion-->
+    <script>
+      //Lav en animation ved at bruge LottieInteractivity objektet
+      LottieInteractivity.create({
+        //Sæt hvilken lottie player der skal være interaktiv
+        player: "#lottie",
+        //Bestem hvilken slags interaktion der skal lyttes efter (cursor = mus)
+        mode: "cursor",
+        actions: [
+          {
+            //Sæt hvilken slags musse interaktion der skal afspille playeren
+            //Du kan også bruge "hover" og "toggle" i stedet for "click"
+            type: "click",
+            forceFlag: false,
+          },
+        ],
+      });
+    </script>
+    <!-- 
+    Mere information om LottieInteractivity:
+    https://lottiefiles.com/interactivity 
+
+    Animationer fra: https://useanimations.com/   
+    -->
+  </body>
+</html>

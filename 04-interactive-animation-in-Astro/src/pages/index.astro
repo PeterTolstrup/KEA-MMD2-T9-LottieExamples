@@ -1,0 +1,30 @@
+---
+import InteractiveAnimation from "../components/InteractiveAnimation.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Interactive Animation in Astro</title>
+  </head>
+  <body>
+    <!-- Tilføj komponenter med forskellige props -->
+    <p>Hover; kør musen over elementet</p>
+    <InteractiveAnimation interaction="hover" name="user" />
+
+    <p>Click; tryk på elementet</p>
+    <InteractiveAnimation interaction="click" name="arrow" />
+
+    <p>Toggle; skift frem og tilbage med tryk</p>
+    <InteractiveAnimation interaction="toggle" name="settings" />
+  </body>
+  <!-- 
+    Animationer fra: https://useanimations.com/
+
+    Mere information om LottieInteractivity:
+    https://lottiefiles.com/interactivity    
+    -->
+</html>
