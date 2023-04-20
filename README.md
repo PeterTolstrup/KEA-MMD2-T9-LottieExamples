@@ -5,7 +5,7 @@
 I Astro eksemplerne skal du inden i mappen for eksemplet kører:
 
 ```
-npm install astro@latest
+npm install
 ```
 
 inden du kører
